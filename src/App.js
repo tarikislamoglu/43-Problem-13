@@ -15,6 +15,13 @@ export default function PersonalInfo() {
   const [lastNameValue, setLastNameValue] = useState("");
   const [timeValue, setTimeValue] = useState("");
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setFirstNameValue("");
+    setLastNameValue("");
+    setTimeValue("");
+  };
+
   return (
     <div className="bg-gray-800 h-screen divide-y divide-white/5">
       <div className="grid max-w-7xl grid-cols-1 gap-x-8 gap-y-10 px-4 py-16 sm:px-6 md:grid-cols-3 lg:px-8">
@@ -25,7 +32,7 @@ export default function PersonalInfo() {
           <p className="mt-1 text-sm leading-6 text-gray-400">Zaman Dilimi</p>
         </div>
 
-        <form className="md:col-span-2 " onSubmit={(e) => e.preventDefault()}>
+        <form className="md:col-span-2 " onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:max-w-xl sm:grid-cols-6">
             <div className="sm:col-span-3">
               <label
